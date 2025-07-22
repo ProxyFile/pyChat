@@ -1,0 +1,114 @@
+# -------------------------------------------
+#                   ___ _           _
+#     _ __  _   _  / __\ |__   __ _| |_
+#    | '_ \| | | |/ /  | '_ \ / _` | __|
+#    | |_) | |_| / /___| | | | (_| | |_
+#    | .__/ \__, \____/|_| |_|\__,_|\__|
+#    |_|    |___/
+#
+#          pyChat Configuration
+#        Simple & Customizable Chat
+# -------------------------------------------
+
+# General settings for the plugin.
+general:
+  # The prefix that appears before plugin messages.
+  prefix: "<yellow><bold>ᴘʏᴄʜᴀᴛ</bold> <gray>» "
+
+# Automatically clears the chat for all players to reduce clutter.
+auto-clearchat:
+  # Set to true to enable, false to disable.
+  enabled: true
+  # The time in minutes between each automatic chat clear.
+  interval-minutes: 5
+  # The message broadcasted to the server when the chat is cleared.
+  message: "<gray>ᴄʜᴀᴛ ᴡᴀs ᴄʟᴇᴀʀᴇᴅ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴛᴏ ʀᴇᴅᴜᴄᴇ ᴄʟᴜᴛᴛᴇʀ."
+
+# Controls the format of all player chat messages.
+chat-format:
+  # Usable placeholders: {username}, {prefix}, {suffix}, {message}.
+  # {prefix} and {suffix} are pulled from your permissions plugin (e.g., LuckPerms).
+  format: "{prefix} {username} {suffix}<gray>: <white>{message}"
+
+# Configure the messages that appear when a player joins or leaves the server.
+join-messages:
+  # Set to true to enable custom join/leave messages, false to use default or disable.
+  enabled: true
+  # The message to display when a player joins. Placeholders: {username}, {prefix}, {suffix}.
+  join: "<gray>[<green>+<gray>] <gray>{username}"
+  # The message to display when a player leaves. Placeholders: {username}, {prefix}, {suffix}.
+  leave: "<gray>[<red>-<gray>] <gray>{username}"
+
+# Allows players with permission to toggle chat visibility for themselves.
+chat-toggle:
+  # Set to true to enable the /chat toggle command, false to disable.
+  enabled: true
+  # The permission required to use the chat toggle command.
+  toggle-permission: "pychat.toggle"
+  # The message shown to a player when they re-enable their chat visibility.
+  toggle-message-on: "<gray>ʏᴏᴜ ᴀʀᴇ ɴᴏᴡ ᴀʙʟᴇ ᴛᴏ sᴇᴇ ᴛʜᴇ ᴄʜᴀᴛ ᴀɢᴀɪɴ."
+  # The message shown to a player when they disable their chat visibility.
+  toggle-message-off: "<gray>ʏᴏᴜ ᴀʀᴇ ɴᴏᴡ ᴜɴᴀʙʟᴇ ᴛᴏ sᴇᴇ ᴛʜᴇ ᴄʜᴀᴛ."
+
+# Prevents players from spamming messages too quickly.
+spam-protection:
+  # Set to true to enable, false to disable.
+  enabled: true
+  # Players with this permission node will not be affected by the message delay.
+  bypass: "pychat.bypass"
+  # The minimum delay in seconds required between sending messages.
+  message-delay-seconds: 2
+  # The number of times a player can trigger the delay before being kicked. Set to 0 to disable kicking.
+  kick-after-warnings: 5
+  # The warning message sent to a player who sends messages too fast.
+  warning-message: "<red>ᴘʟᴇᴀsᴇ sʟᴏᴡ ᴅᴏᴡɴ! ʏᴏᴜ'ʀᴇ sᴇɴᴅɪɴɢ ᴍᴇssᴀɢᴇs ᴛᴏᴏ ǫᴜɪᴄᴋʟʏ."
+  # The message shown to a player who is kicked for spamming.
+  kick-message: "<red>ʏᴏᴜ ᴡᴇʀᴇ ᴋɪᴄᴋᴇᴅ ғᴏʀ sᴘᴀᴍᴍɪɴɢ ɪɴ ᴄʜᴀᴛ."
+
+# Blocks messages containing specific words or phrases.
+blacklist:
+  # Set to true to enable the word filter, false to disable.
+  enabled: true
+  # Players with this permission can use blacklisted words without being blocked.
+  bypass: "pychat.bypass"
+  # Add any words you want to block here. The check is not case-sensitive.
+  words:
+    - "badword1"
+    - "curseword"
+    - "examplephrase"
+  # The warning message sent to a player if their message is blocked.
+  warn-message: "<red>ʏᴏᴜʀ ᴍᴇssᴀɢᴇ ᴄᴏɴᴛᴀɪɴs ᴀ ʙʟᴀᴄᴋʟɪsᴛᴇᴅ ᴡᴏʀᴅ ᴀɴᴅ ᴡᴀs ɴᴏᴛ sᴇɴᴛ."
+  # Kick the player after this many violations. Set to 0 to disable kicking.
+  kick-after: 3
+  # The message shown to a player who is kicked for repeated violations.
+  kick-message: "<red>ʏᴏᴜ ᴡᴇʀᴇ ᴋɪᴄᴋᴇᴅ ғᴏʀ ʀᴇᴘᴇᴀᴛᴇᴅʟʏ ᴜsɪɴɢ ʙʟᴀᴄᴋʟɪsᴛᴇᴅ ᴡᴏʀᴅs."
+
+# Prevents players from posting links in chat.
+link-protection:
+  # Set to true to enable, false to disable.
+  enabled: true
+  # Players with this permission node can post any links.
+  bypass: "pychat.bypass"
+  # If true, blocks messages containing server IP addresses (e.g., 123.45.67.89).
+  block-ips: true
+  # If true, blocks messages containing domain names (e.g., www.example.com).
+  block-domains: true
+  # Any links or domains in this list will NOT be blocked.
+  # This is useful for your server's website, store, or discord.
+  allowed-links:
+    - "store.yourserver.com"
+    - "your-discord-invite"
+  # The warning messages sent to a player when they try to post a link / ip.
+  link-message: "<red>ʟɪɴᴋs ᴀʀᴇ ɴᴏᴛ ᴀʟʟᴏᴡᴇᴅ ɪɴ ᴄʜᴀᴛ."
+  ip-message: "<red>ɪᴘs ᴀʀᴇ ɴᴏᴛ ᴀʟʟᴏᴡᴇᴅ ɪɴ ᴄʜᴀᴛ."
+
+# Sends in-game chat messages to a Discord channel via a webhook.
+discord-webhook:
+  # Set to true to enable webhook integration, false to disable.
+  enabled: false
+  # Can be API Rate-limited
+  log-chat: false
+  # Less likely to be Rate-limited
+  log-kick: true
+  # Paste your full Discord webhook URL here.
+  url: "https://discord.com/api/webhooks/your_webhook_url_here"

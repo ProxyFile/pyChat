@@ -1,0 +1,12 @@
+de\proxyfile\pychat\PyChat.class
+de\proxyfile\pychat\essentials\UpdateChecker.class
+de\proxyfile\pychat\essentials\LogType.class
+de\proxyfile\pychat\essentials\ClearChatTask.class
+de\proxyfile\pychat\events\ChatEvent.class
+de\proxyfile\pychat\discord\DiscordHandler.class
+de\proxyfile\pychat\events\UserEvents.class
+de\proxyfile\pychat\essentials\Toolkit.class
+de\proxyfile\pychat\essentials\Toolkit$1.class
+de\proxyfile\pychat\commands\ChatCommand.class
+de\proxyfile\pychat\discord\EmbedBuilder.class
+de\proxyfile\pychat\commands\ToggleCommand.class
